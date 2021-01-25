@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>cyberSchool</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="index">cyberSchool</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#aboutUs">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="courses">Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index" id="signup">Signup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="login">Login</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+<br>
+
+<div class="indexContainer">
+  <section class="indexLabel">
+    <h3>Learn to code,gain a new skill, get a new job</h3>
+    <form class="" action="index.html" method="post" id="indexSearchForm">
+      <input type="text" name="" value="" placeholder="Search the course" >
+      <button type="button" name="button" class="btn btn-primary">Search</button>
+    </form>
+    <div class="" id="courseData">
+       <h5><span class="num"> 50+ </span> Courses </h5>
+       <h5><span class="num"> 50+ </span>Teachers</h5>
+      <h5><span class="num">200+ </span> Students</h5>
+    </div>
+  </section>
+  <section class="indexForms">
+    <form class=""  method="post" id="signupForm">
+      <h3>Sign up</h3>
+      <input type="text" name=""  id="StudentFirstName" placeholder="Enter the First Name" class="signupInputs form-control">
+      <input type="text" name="" id="StudentLastName" placeholder="Enter the Last Name" class="signupInputs form-control">
+      <div class="gender">
+            <input type="radio" name="gender" value="male" id="male" >
+            <label for="male" >Male</label>
+
+            <input type="radio" name="gender" value="female" id="female">
+            <label for="female">Female</label>
+
+            <input type="radio" name="gender" value="other" id="other">
+            <label for="other">Other</label>
+      </div>
+
+      <input placeholder="Enter the Date of Birth" class="textbox-n signupInputs form-control " type="text" onblur="(this.type='text')"
+      onfocus="(this.type='date')"   id="StudentDob">
+
+      <input type="text" name=""  id="StudentPhone" class="signupInputs form-control" placeholder="Enter the phone">
+      <input type="text" name=""  id="StudentAddress" class="signupInputs form-control" placeholder="Enter the Address">
+      <input type="email" name=""  id="StudentEmail" class="signupInputs form-control" placeholder="Enter the Email">
+      <input type="password" name="" id="StudentPassword" class="signupInputs form-control" placeholder="Enter the password">
+      <input type="password" name=""  id="StudentConfirmPassword" class="signupInputs form-control" placeholder="Confirm the password">
+      <button type="submit" name="button" class="btn btn-primary">Signup</button>
+    </form>
+
+    <form class="" action="index.html" method="post" id="loginForm" style="display:none">
+      <h3>Log In</h3>
+      <input type="text" name="" value="" placeholder="Enter the Email" id="loginEmail">
+      <input type="text" name="" value="" placeholder="Enter the password" id="loginPassword">
+      <button type="submit" name="button" class="btn btn-primary">Log In</button>
+    </form>
+  </section>
+</div>
+
+<div class="topCategoriesDiv">
+  <h3>Top Categories</h3>
+  <ul class="topCategories">
+    <a href="#">Web Development</a>
+    <a href="#">Mobile Apps</a>
+    <a href="#">Design</a>
+    <a href="#">Database</a>
+    <a href="#">Game Development</a>
+  </ul>
+</div>
+
+
+<footer id="aboutUs" style="background-color: #eee; height:175px; padding:20px">
+
+  <h4>About US</h4>
+
+  Udemy is the leading global marketplace for teaching and learning, connecting students everywhere to the world’s best instruction anywhere.
+  cyberSchool helps organizations of all kinds prepare for the ever-evolving future of work. Our curated collection of top-rated business and technical courses gives companies, governments, and nonprofits the power to develop in-house expertise and satisfy employees’ hunger for learning and development.
+
+
+</footer>
+
+
+
+
+</body>
+
+<script type="text/javascript" src="jquery/jquery.min.js">
+</script>
+<script type="text/javascript" src="bootstrap/popperjs/popper.min.js">
+</script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js">
+</script>
+<script type="text/javascript" src="js/custom.js">
+</script>
+</html>
