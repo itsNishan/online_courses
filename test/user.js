@@ -18,3 +18,23 @@ before(done => {
 after(done => {
     serverr.close(done);
 });
+
+
+// admin login
+describe('admin login', () => {
+    describe('/POST login', () => {
+        it('it should log in admin', (done) => {
+            // chai.request(baseUrlRoutes)
+            chai.request(myapp)
+                .post('/admin/login')
+                .send({
+                    "email": 'arunmajhi@gmail.com',
+                    "password": 'asd',
+                })
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
+    });
+});
