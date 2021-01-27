@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin </title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <script type="text/javascript" src="jquery/jquery.min.js">
+  </script>
+  <script type="text/javascript" src="bootstrap/popperjs/popper.min.js">
+  </script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js">
+  </script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("#myModal").modal('show');
+  });
+</script>
+  <script type="text/javascript" src="js/adminjs.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Admin Login</h4>
+          <button type="button" class="close" data-dismiss="modal" id="closeAdmin">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          
+          <form class="" action="index.html" method="post" id="adminLoginForm">
+            <input type="email" name="" class="form-control" id="adminEmail" placeholder="Enter the Admin email">
+            <br>
+            <input type="password" name="" class="form-control" id="adminPassword" placeholder="Enter the Admin Password">
+            <br>
+            <button type="submit" class="btn btn-primary w-100" >LogIn</button>
+          </form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger w-100" data-dismiss="modal" id="closeAdminBtn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
