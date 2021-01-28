@@ -50,6 +50,57 @@ function checkPasswordMatch(req, res, next) {
 
 
 
+function jwtTokenGen(req, res, next) {
+
+    jwt.sign({
+            email: req.body.email,
+            accessLevel: 'superuser'
+        }, 'thisissecretkey', {
+            expiresIn: "10h"
+        },
+
+        function(err, token) {
+            if (err != null || undefined) {
+                console.log(err)
+                next({
+                    "status": 401,
+                    "message": "Unauthorized token"
+                })
+            } else {
+                req.genToken = token;
+                next();
+                // console.log(token)   
+            }
+
+        }
+    );
+
+}
+
+function adminjwtTokenGen(req, res, next) {
+    jwt.sign({
+            email: req.body.Email,
+            accessLevel: 'superadmin'
+        }, 'thisissecretkey', {
+            expiresIn: "10h"
+        },
+
+        function(err, token) {
+            if (err != null || undefined) {
+                console.log(err)
+                next({
+                    "status": 401,
+                    "message": "Unauthorized token"
+                })
+            } else {
+                req.genToken = token;
+                next();
+                // console.log(token)   
+            }
+        }
+    );
+}
+
 
 
 
