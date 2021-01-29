@@ -11,15 +11,28 @@
   "dependencies": {
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cucumber": "^7.0.0-rc.0",
     "ejs": "^3.1.5",
+    "email-verifier": "^0.4.1",
     "express": "^4.17.1",
     "got": "^11.8.1",
     "jsonwebtoken": "^8.5.1",
+    "mocha": "^8.2.1",
     "multer": "^1.4.2",
+    "mysql2": "^2.2.5",
+    "nyc": "^15.1.0",
+    "selenium-webdriver": "^4.0.0-alpha.8",
+    "sequelize": "^6.5.0",
     "swagger-jsdoc": "^6.0.1",
-    "swagger-ui-express": "^4.1.6"
+    "swagger-ui-express": "^4.1.6",
+    "yarn": "^1.22.10"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
+  },
+  "directories": {
+    "test": "test"
   }
 }
