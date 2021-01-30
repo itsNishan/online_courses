@@ -26,4 +26,4 @@ const myUsers = mysequelize.sequelize.define('myUsers',
 
 myUsers.sync({force:false})
 
-
+module.exports = myUsers;
