@@ -19,6 +19,25 @@ after(done => {
     serverr.close(done);
 });
 
+// login
+describe('users', () => {
+    describe('/POST login', () => {
+        it('it should log in user', (done) => {
+            // chai.request(baseUrlRoutes)
+            chai.request(myapp)
+                .post('/user/login')
+                .send({
+                    "email": 'rai.rai.ribin1000@gmail.com',
+                    "password": 'asd',
+                })
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
+    });
+});
+
 
 // admin login
 describe('admin login', () => {
