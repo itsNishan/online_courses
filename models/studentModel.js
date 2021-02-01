@@ -37,5 +37,38 @@ const myUsers = mysequelize.sequelize.define('myUsers',
 	gender: {
 		type: mysequelize.Sequelize.STRING,
         allowNull : false
+	},
+	
+	
+    verify: {
+		type: mysequelize.Sequelize.STRING,
+        allowNull : false,
+        defaultValue: 0
     },
+
+
+
+	email: {
+		type: mysequelize.Sequelize.STRING,
+		allowNull : false
+	},
+
+
+	password: {
+		type: mysequelize.Sequelize.STRING,
+		allowNull : false
+	}
+
+},
+
+{
+	freezeTableName : true,
+	tableName: 'student'
+}
+
 )
+
+myUsers.sync({force:false})
+
+
+module.exports = myUsers;
