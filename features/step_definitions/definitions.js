@@ -61,3 +61,30 @@ Then(/^Put to service api "([^"]*)" with '([^']*)' and I should get the '([^']*)
     var assertdata = JSON.parse(expectval);
     return assert.deepEqual(data, assertdata);
 });
+
+
+// delete
+Then('Delete the service api {string} and i should get the {string}', async function (url, expectval) {
+    result = await got.get(url, jsonFormat);
+
+    var data = result.body;
+    var assertdata = JSON.parse(expectval);
+    return assert.deepEqual(data, assertdata);
+});
+
+
+When(/^send DELETE request to "([^"]*)", the response value should be$/, async function (url, name) {
+    let res = await got.get(url);
+    let json = JSON.parse(res.body);
+    return assert.equal(json.name, name);
+});
+
+
+
+
+
+
+
+
+
+
