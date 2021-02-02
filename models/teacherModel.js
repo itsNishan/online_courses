@@ -67,6 +67,11 @@ studentID: {
 
 },
 
+{
+	freezeTableName : true,
+	tableName: 'teacher'
+}
+
 )
 
 myUsers.sync({force:false})
