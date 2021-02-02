@@ -19,11 +19,6 @@
     "express": "^4.17.1",
     "got": "^11.8.1",
     "jsonwebtoken": "^8.5.1",
-<<<<<<< HEAD
-    "multer": "^1.4.2",
-    "swagger-jsdoc": "^6.0.1",
-    "swagger-ui-express": "^4.1.6"
-=======
     "mocha": "^8.2.1",
     "multer": "^1.4.2",
     "mysql2": "^2.2.5",
@@ -33,7 +28,6 @@
     "swagger-jsdoc": "^6.0.1",
     "swagger-ui-express": "^4.1.6",
     "yarn": "^1.22.10"
->>>>>>> dc90c623c7fd31d1a27459dd6a488f49a392d8bd
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
