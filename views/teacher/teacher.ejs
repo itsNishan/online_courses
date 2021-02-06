@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>cyberSchool</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/teachercss.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">cyberSchool</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="courses">Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="teacher" id="teacherSignup">Signup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="teacherLogin">Login</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+<br>
+
+<section class="teacherForms">
+    <form class=""  method="post" id="teacherSignupForm">
+      <h3>Sign up</h3>
+      <input type="text" name="" value="teacher" id="teacherFirstName" placeholder="Enter the First Name" class="signupInputs form-control">
+      <input type="text" name="" value="teacher" id="teacherLastName" placeholder="Enter the Last Name" class="signupInputs form-control">
+      <div class="gender">
+            <input type="radio" name="gender" value="male" id="male" checked="">
+            <label for="male" >Male</label>
+
+            <input type="radio" name="gender" value="female" id="female">
+            <label for="female">Female</label>
+
+            <input type="radio" name="gender" value="other" id="other">
+            <label for="other">Other</label>
+      </div>
+
+      <input placeholder="Enter the Date of Birth" class="textbox-n signupInputs form-control " type="text" onblur="(this.type='text')"
+      onfocus="(this.type='date')" value="12-12-2000"  id="teacherDOB">
+
+      <input type="text" name="" value="1234567890" id="teacherPhone" class="signupInputs form-control" placeholder="Enter the phone">
+
+      <input type="text" name="" value="ktm" id="teacherAddress" class="signupInputs form-control" placeholder="Enter the Address">
+
+      <textarea class="w-100 form-control" id="teacherBio" placeholder="Enter your bio"></textarea>
+
+      <input type="email" name="" value="teacher@gmail.com" id="teacherEmail" class="signupInputs form-control" placeholder="Enter the Email">
+      <input type="password" name="" value="12" id="teacherPassword" class="signupInputs form-control" placeholder="Enter the password">
+      <input type="password" name="" value="12" id="teacherConfirmPassword" class="signupInputs form-control" placeholder="Confirm the password">
+      <button type="submit" name="button" class="btn btn-primary w-100">Signup</button>
+    </form>
+
+    <!-- <form class="bg-white"  method="post" id="teacherLoginForm" style="display:none">
+      <h3>Log In</h3>
+      <input type="text" name="" value="" class="form-control" placeholder="Enter the Email" id="loginEmail">
+      <input type="text" name="" value="" class="form-control" placeholder="Enter the password" id="loginPassword">
+      <button type="submit" name="button" class="btn btn-primary">Log In</button>
+    </form> -->
+  </section>
+
+
+
+</body>
+
+<script type="text/javascript" src="../jquery/jquery.min.js">
+</script>
+<script type="text/javascript" src="../bootstrap/popperjs/popper.min.js">
+</script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js">
+</script>
+<script type="text/javascript" src="../js/teacherjs.js">
+</script>
+</html>
