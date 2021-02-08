@@ -47,5 +47,54 @@ function deleteStudent(req, res, next) {
         })
 }
 
+// student update
+function studentUpdate(req, res, next) {
+    // console.log(req.body);
+    if (req.body.id != '') {
+        studentmodel.update({
+            first_name: req.body.FirstName,
+            last_name: req.body.LastName,
+            address: req.body.Address,
+            dob: req.body.DOB,
+            phone: req.body.Phone,
+            gender: req.body.Gender,
+            email: req.body.Email,
+            verify:req.body.Verify
+        }, {
+            where: { id: req.params.id }
+        })
+            .then(function (result) {
+                // console.log('data added');
+                next();
+            })
+            .catch(function (err) {
+                next({ "status": 500, "message": "DB Error" });
+            })
+    } else {
+        next({ "status": 500, "message": "Invalid Student" });
+    }
+}
+
+//profile image update
+
+function studentImageUpdate(req, res, next) {
+    // console.log(req.body);
+    if (req.body.id != '') {
+        studentmodel.update({
+            profile_image: req.testVall
+        }, {
+            where: { id: req.body.id }
+        })
+            .then(function (result) {
+                // console.log('data added');
+                next();
+            })
+            .catch(function (err) {
+                next({ "status": 500, "message": "DB Error" });
+            })
+    } else {
+        next({ "status": 500, "message": "Invalid Profile Image" });
+    }
+}
 
 
