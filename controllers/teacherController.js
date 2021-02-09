@@ -84,3 +84,115 @@ function teacherImageUpdate(req, res, next) {
     }
 }
 
+
+//delete teacher
+function deleteTeacher(req, res, next){
+	teachermodel.destroy({
+            where: {
+                id: req.params.id
+            },
+            raw: true
+        })
+        .then(function(result) {
+            next();
+        })
+        .catch(function(err) {
+            next({ "status": 500, "message": "DB Error" });
+        })
+}
+
+//get teacher data
+function getTeacherData(req, res, next){
+	teachermodel.findOne({
+            where: { id: req.params.id }
+            // raw: true
+        })
+        .then(function(result) {
+            // console.log(result[1].dataValues);
+            req.allUser = result;
+            next();
+            // console.log(result);
+        })
+        .catch(function(err) {
+            next({ "status": 500, "message": "DB Error" });
+        })
+}
+
+//get all teachers data
+function getTeacherAllData(req, res, next){
+  teachermodel.findAll({
+
+        })
+        .then(function(result) {
+            // console.log(result[1].dataValues);
+            req.allUser = result;
+            next();
+            // console.log(result);
+        })
+        .catch(function(err) {
+            next({ "status": 500, "message": "DB Error" });
+        })
+}
+
+//search teacher
+function searchTeacher(req, res, next){
+	var search = req.body.search
+console.log(search)
+    teachermodel.findAll({
+            where: {
+                first_name: {
+                    [Op.like]: '%' + search + '%'
+                }
+            },
+            raw: true
+        })
+        .then(function(result) {
+            // console.log(result[1].dataValues);
+            req.User = result;
+            // console.log(req.allUser);
+            next();
+            // console.log(result);
+        })
+        .catch(function(err) {
+            next({ "status": 500, "message": "DB Error" });
+        })
+}
+
+// token
+function token(req, res, next) {
+    jwt.sign({ username: req.body.username, accesslevel: 'superadmin' }, 'thisissecretkey', { expiresIn: '10h' },
+        function(err, token) {
+            // console.log(token);
+            if (err != null || undefined) {
+                console.log(err);
+                res.send({ "status": "401", "message": "unauthorized" });
+            } else {
+                req.genToken = token;
+                // res.status(200);
+                // res.json(token);
+                next();
+                console.log(token);
+            }
+        });
+}
+
+// email Check
+function emailCheck(req, res, next) {
+    // var photo = req.body.Photo;
+    teachermodel.findOne({
+            where: { email: req.body.Email }
+        })
+        .then(function(result) {
+            if (result.dataValues != '') {
+                var fs = require('fs');
+                // fs.unlinkSync('./resources/images/profile/' + photo);
+                next({
+                    "status": 409,
+                    "message": "Email already exists"
+                });
+            }
+        })
+        .catch(function(result) {
+            next();
+        })
+}
