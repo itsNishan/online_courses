@@ -1,4 +1,4 @@
-vr studentmodel = require('../models/studentModel');
+var studentmodel = require('../models/studentModel');
 var teachermodel = require('../models/teacherModel');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt');
@@ -46,6 +46,37 @@ function deleteStudent(req, res, next) {
             next({ "status": 500, "message": "DB Error" });
         })
 }
+
+
+
+
+
+//search Student by FirstName
+// function searchStudent(req, res, next){
+// 	var search = req.body.search
+// 	// console.log(search)
+//     usermodel.findAll({
+//             where: {
+//                 first_name: {
+//                     [Op.like]: '%' + search + '%'
+//                 }
+//             },
+//             raw: true
+//         })
+//         .then(function(result) {
+//             // console.log(result[1].dataValues);
+//             req.User = result;
+//             // console.log(req.allUser);
+//             next();
+//             // console.log(result);
+//         })
+//         .catch(function(err) {
+//             next({ "status": 500, "message": "DB Error" });
+//         })
+// }
+
+
+
 
 // student update
 function studentUpdate(req, res, next) {
@@ -98,3 +129,152 @@ function studentImageUpdate(req, res, next) {
 }
 
 
+//get student data
+function getStudentData(req, res, next) {
+    studentmodel.findOne({
+        where: { id: req.params.id }
+        // raw: true
+    })
+        .then(function (result) {
+            // console.log(result[1].dataValues);
+            req.allUser = result;
+            next();
+            // console.log(result);
+        })
+        .catch(function (err) {
+            next({ "status": 500, "message": "DB Error" });
+        })
+}
+
+//get all students data
+function getStudentAllData(req, res, next) {
+    studentmodel.findAll({
+
+    })
+        .then(function (result) {
+            // console.log(result[1].dataValues);
+            req.allUser = result;
+            next();
+            // console.log(result);
+        })
+        .catch(function (err) {
+            next({ "status": 500, "message": "DB Error" });
+        })
+}
+
+//search student
+function searchStudent(req, res, next) {
+    var search = req.body.search
+    //console.log(search)
+    studentmodel.findAll({
+        where: {
+            first_name: {
+                [Op.like]: '%' + search + '%'
+            }
+        },
+        raw: true
+    })
+        .then(function (result) {
+            // console.log(result[1].dataValues);
+            req.User = result;
+            // console.log(req.allUser);
+            next();
+            // console.log(result);
+        })
+        .catch(function (err) {
+            next({ "status": 500, "message": "DB Error" });
+        })
+}
+
+// token
+function token(req, res, next) {
+    jwt.sign({ username: req.body.username, accesslevel: 'superadmin' }, 'thisissecretkey', { expiresIn: '10h' },
+        function (err, token) {
+            // console.log(token);
+            if (err != null || undefined) {
+                console.log(err);
+                res.send({ "status": "401", "message": "unauthorized" });
+            } else {
+                req.genToken = token;
+                // res.status(200);
+                // res.json(token);
+                next();
+                console.log(token);
+            }
+        });
+}
+
+// email Check
+function emailCheck(req, res, next) {
+    // var photo = req.body.Photo;
+    studentmodel.findOne({
+        where: { email: req.body.Email }
+    })
+        .then(function (result) {
+            if (result.dataValues != '') {
+                var fs = require('fs');
+                // fs.unlinkSync('./resources/images/profile/' + photo);
+                next({
+                    "status": 409,
+                    "message": "Email already exists"
+                });
+            }
+        })
+        .catch(function (result) {
+            next();
+        })
+}
+// duplicate email Check
+function duplicateEmail(req, res, next) {
+
+    teachermodel.findOne({
+        where: { email: req.body.Email }
+    })
+        .then(function (result) {
+            if (result.dataValues != '') {
+                var fs = require('fs');
+                // fs.unlinkSync('./resources/images/profile/' + photo);
+                next({
+                    "status": 409,
+                    "message": "Email already exists"
+                });
+            }
+        })
+        .catch(function (result) {
+            next();
+        })
+}
+
+
+
+
+// has password
+function passwordHash(req, res, next) {
+    // req.body.Password
+    bcrypt.hash(req.body.Password, saltRounds)
+        .then(function (hash) {
+            req.hashValue = hash;
+            // console.log(req.hashValue);
+            next();
+        })
+        .catch(function (err) {
+            console.log(err);
+        })
+
+}
+
+
+
+module.exports = {
+    studentRegister,
+    studentImageUpdate,
+    duplicateEmail,
+    deleteStudent,
+    studentUpdate,
+    getStudentData,
+    getStudentAllData,
+    searchStudent,
+    token,
+    emailCheck,
+    passwordHash
+}
