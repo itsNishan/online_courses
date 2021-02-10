@@ -42,7 +42,7 @@ function teacherUpdate(req, res, next) {
                 last_name: req.body.LastName,
                 address: req.body.Address,
                 dob: req.body.DOB,
-                phone: req.body.Phone,
+                phoneq.body.Phone,
                 gender:req.body.Gender,
                 bio:req.body.Bio,
                 email:req.body.Email,
@@ -64,7 +64,7 @@ function teacherUpdate(req, res, next) {
 
 // teacher profile image update
 
-function teacherImageUpdate(req, res, next) {
+function teacherImaate(req, res, next) {
     // console.log(req.body);
     if (req.body.id != '') {
         teachermodel.update({
@@ -119,7 +119,7 @@ function getTeacherData(req, res, next){
 }
 
 //get all teachers data
-function getTeacherAllData(req, res, next){
+function geAllData(req, res, next){
   teachermodel.findAll({
 
         })
@@ -135,7 +135,7 @@ function getTeacherAllData(req, res, next){
 }
 
 //search teacher
-function searchTeacher(req, res, next){
+function seacher(req, res, next){
 	var search = req.body.search
 console.log(search)
     teachermodel.findAll({
@@ -146,7 +146,7 @@ console.log(search)
             },
             raw: true
         })
-        .then(function(result) {
+        .then(fion(result) {
             // console.log(result[1].dataValues);
             req.User = result;
             // console.log(req.allUser);
@@ -176,8 +176,8 @@ function token(req, res, next) {
         });
 }
 
-// email Check
-function emailCheck(req, res, next) {
+// email Ch
+function emailck(req, res, next) {
     // var photo = req.body.Photo;
     teachermodel.findOne({
             where: { email: req.body.Email }
@@ -195,4 +195,57 @@ function emailCheck(req, res, next) {
         .catch(function(result) {
             next();
         })
+}
+
+
+// duplicate email Check
+function duplicateEmail(req, res, next) {
+
+    studentmodel.fi({
+            where: { email: req.body.Email }
+        })
+        .then(function(result) {
+            if (result.dataValues != '') {
+                var fs = require('fs');
+                // fs.unlinkSync('./resources/images/profile/' + photo);
+                next({
+                    "status": 409,
+                    "message": "Email already exists"
+                });
+            }
+        })
+        .catch(function(result) {
+            next();
+        })
+}
+
+// has password
+function passHash(req, res, next) {
+    // req.body.Password
+    bcrypt.hash(req.body.Password, saltRounds)
+        .then(function(hash) {
+            req.hashValue = hash;
+            // console.log(req.hashValue);
+            next();
+        })
+        .catch(function(err) {
+            console.log(err);
+        })
+}
+
+
+
+module.exports = {
+    teacherRegister,
+    deleteTeacher,
+    teacherUpte,
+    teacherImageUpdate,
+    getTeacherData,
+    getTeacherAllData,
+    searchTeacher,
+    token,
+    emailCheck,
+    duplicateEmail,
+    passwordHash,
+
 }
