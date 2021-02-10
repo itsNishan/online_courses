@@ -42,7 +42,7 @@ function teacherUpdate(req, res, next) {
                 last_name: req.body.LastName,
                 address: req.body.Address,
                 dob: req.body.DOB,
-                phoneq.body.Phone,
+                phone: req.body.Phone,
                 gender:req.body.Gender,
                 bio:req.body.Bio,
                 email:req.body.Email,
@@ -64,7 +64,7 @@ function teacherUpdate(req, res, next) {
 
 // teacher profile image update
 
-function teacherImaate(req, res, next) {
+function teacherImageUpdate(req, res, next) {
     // console.log(req.body);
     if (req.body.id != '') {
         teachermodel.update({
@@ -83,7 +83,6 @@ function teacherImaate(req, res, next) {
         next({ "status": 500, "message": "Invalid Profile Image" });
     }
 }
-
 
 //delete teacher
 function deleteTeacher(req, res, next){
@@ -119,7 +118,7 @@ function getTeacherData(req, res, next){
 }
 
 //get all teachers data
-function geAllData(req, res, next){
+function getTeacherAllData(req, res, next){
   teachermodel.findAll({
 
         })
@@ -135,7 +134,7 @@ function geAllData(req, res, next){
 }
 
 //search teacher
-function seacher(req, res, next){
+function searchTeacher(req, res, next){
 	var search = req.body.search
 console.log(search)
     teachermodel.findAll({
@@ -146,7 +145,7 @@ console.log(search)
             },
             raw: true
         })
-        .then(fion(result) {
+        .then(function(result) {
             // console.log(result[1].dataValues);
             req.User = result;
             // console.log(req.allUser);
@@ -176,8 +175,8 @@ function token(req, res, next) {
         });
 }
 
-// email Ch
-function emailck(req, res, next) {
+// email Check
+function emailCheck(req, res, next) {
     // var photo = req.body.Photo;
     teachermodel.findOne({
             where: { email: req.body.Email }
@@ -201,7 +200,7 @@ function emailck(req, res, next) {
 // duplicate email Check
 function duplicateEmail(req, res, next) {
 
-    studentmodel.fi({
+    studentmodel.findOne({
             where: { email: req.body.Email }
         })
         .then(function(result) {
@@ -220,7 +219,7 @@ function duplicateEmail(req, res, next) {
 }
 
 // has password
-function passHash(req, res, next) {
+function passwordHash(req, res, next) {
     // req.body.Password
     bcrypt.hash(req.body.Password, saltRounds)
         .then(function(hash) {
@@ -238,7 +237,7 @@ function passHash(req, res, next) {
 module.exports = {
     teacherRegister,
     deleteTeacher,
-    teacherUpte,
+    teacherUpdate,
     teacherImageUpdate,
     getTeacherData,
     getTeacherAllData,
