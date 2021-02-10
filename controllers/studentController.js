@@ -47,37 +47,6 @@ function deleteStudent(req, res, next) {
         })
 }
 
-
-
-
-
-//search Student by FirstName
-// function searchStudent(req, res, next){
-// 	var search = req.body.search
-// 	// console.log(search)
-//     usermodel.findAll({
-//             where: {
-//                 first_name: {
-//                     [Op.like]: '%' + search + '%'
-//                 }
-//             },
-//             raw: true
-//         })
-//         .then(function(result) {
-//             // console.log(result[1].dataValues);
-//             req.User = result;
-//             // console.log(req.allUser);
-//             next();
-//             // console.log(result);
-//         })
-//         .catch(function(err) {
-//             next({ "status": 500, "message": "DB Error" });
-//         })
-// }
-
-
-
-
 // student update
 function studentUpdate(req, res, next) {
     // console.log(req.body);
