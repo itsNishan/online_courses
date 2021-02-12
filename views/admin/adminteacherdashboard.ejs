@@ -2,12 +2,7 @@
 <html>
 <head>
   <title>
-
-
   </title>
-  <!-- <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.css"> -->
-  <!-- <link rel="stylesheet" type="text/css" href="resources/css/custom.css"> -->
-
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/custom.css">
     
@@ -97,11 +92,78 @@
 
  <form  class="form-horizontal" id="editUserr"  method= "POST"  enctype="multipart/form-data">
 <fieldset>
+
+<!-- <legend>Registration</legend> -->
+
+<div class="form-group">
+  
+  <label class="col-md-4 control-label " for="textinput" >First Name</label>
+  <div class="col-md-4 w-100" >
+  <input id="eFirstName" name="username" type="text" placeholder="Enter First Name" class="form-control input-md w-100">
+  </div>
+
+  <label class="col-md-4 control-label" for="textinput">Last Name</label>
+  <div class="col-md-4">
+  <input id="eLastName" name="username" type="text" placeholder="Enter Last Name" class="form-control input-md">
+  </div>
+
+  <label class="col-md-4 control-label" for="textinput">Address</label>
+  <div class="col-md-4">
+  <input id="eAddress" name="username" type="text"  placeholder="Enter Address" class="form-control input-md">
+  </div>
+
+  <label class="col-md-4 control-label" for="textinput">Phone</label>
+  <div class="col-md-4">
+  <input id="ePhone" name="username" type="text"  placeholder="Enter the phone" class="form-control input-md">
+  </div>
+
+  <label class="col-md-4 control-label" for="textinput">DOB</label>
+  <div class="col-md-4">
+  <input id="eDOB" name="username" type="text"  placeholder="Enter DOB" class="form-control input-md">
+  </div>
+
+  <label class="col-md-4 control-label" for="textinput">Gender</label>
+  <div class="col-md-4">
+  <input id="eGender" name="username" type="text"  placeholder="Enter Gender" class="form-control input-md">
+  </div>
+
+  <label class="col-md-4 control-label" for="textinput">Bio</label>
+  <div class="col-md-4">
+  <input id="eBio" name="username" type="text"  placeholder="Enter Gender" class="form-control input-md">
+  </div>
+
+  <label class="col-md-4 control-label" for="textinput">Email</label>
+  <div class="col-md-4">
+  <input id="eEmail" name="username" type="text"  placeholder="Enter Email" class="form-control input-md">
+  </div>
+
+  
+
+   <label class="col-md-4 control-label" for="textinput">Verify</label>
+  <div class="col-md-4">
+  <input id="eVerify" name="username" type="text"  placeholder="Enter verify number" class="form-control input-md">
+  </div>
+
+ 
+
+</div>
+
+<div class="form-group">
+  <div class="col-md-4">
+    <button id="teacherEditSave" name="submit"  class="btn btn-info">SAVE</button>
+  </div>
+</div>
+
 </fieldset>
 </form>
-</div>
-</div>
-</div>
+
+ </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 </html>
