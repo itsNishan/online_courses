@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+  </title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+    
+  <script type="text/javascript" src="jquery/jquery.min.js">
+  </script>
+
+  <script type="text/javascript" src="bootstrap/popperjs/popper.min.js">
+  </script>
+
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js">
+  </script>
+
+  <script type="text/javascript" src="js/adminteacherdashboard.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">cyberSchool</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-link" href="index" id="logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <h1>Teacher Dashboard</h1>
+  <h3 id="totalTeacherNumber">Total teachers: </h3>
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Teacher ID</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">Profile Image</th>
+      <th scope="col">Bio</th>
+      <th scope="col">Verify</th>
+
+          
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody id="teachersListBody">
+
+    <tr>
+      <th scope="row">1</th>
+      <td>JAVA</td>
+      <td>very tori language</td>
+      <td>20 hours</td>
+      <td>$300</td>
+      <td>The IMAGE</td>
+      <td>Web</td>
+      <td>Robin</td>
+      <td><button type="button" id="edit" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary">Edit</button></td>
+      <td><button type="button" id="delete" class="btn btn-danger delete">Delete</button></td>
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Teacher </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+ <form  class="form-horizontal" id="editUserr"  method= "POST"  enctype="multipart/form-data">
+<fieldset>
+
+<!-- <legend>Registration</legend> -->
+
+<div class="form-group">
+  
+  <label class="col-md-4 control-label " for="textinput" >First Name</label>
+  <div class="col-md-4 w-100" >
+  <input id="eFirstName" name="username" type="text" placeholder="Enter First Name" class="form-control input-md w-100">
+  </div>
+
+  <label class="col-md-4 control-label" for="textinput">Last Name</label>
+  <div class="col-md-4">
+  <input id="eLastName" name="username" type="text" placeholder="Enter Last Name" class="form-control input-md">
+  </div>
+
+  <label class="col-md-4 control-label" for="textinput">Address</label>
+  <div class="col-md-4">
+  <input id="eAddress" name="username" type="text"  placeholder="Enter Address" class="form-control input-md">
+  </div>
+
+  <label class="col-md-4 control-label" for="textinput">Phone</label>
+  <div class="col-md-4">
+  <input id="ePhone" name="username" type="text"  placeholder="Enter the phone" class="form-control input-md">
+  </div>
+
+  <label class="col-md-4 control-label" for="textinput">DOB</label>
+  <div class="col-md-4">
+  <input id="eDOB" name="username" type="text"  placeholder="Enter DOB" class="form-control input-md">
+  </div>
+
+  <label class="col-md-4 control-label" for="textinput">Gender</label>
+  <div class="col-md-4">
+  <input id="eGender" name="username" type="text"  placeholder="Enter Gender" class="form-control input-md">
+  </div>
+
+  <label class="col-md-4 control-label" for="textinput">Bio</label>
+  <div class="col-md-4">
+  <input id="eBio" name="username" type="text"  placeholder="Enter Gender" class="form-control input-md">
+  </div>
+
+  <label class="col-md-4 control-label" for="textinput">Email</label>
+  <div class="col-md-4">
+  <input id="eEmail" name="username" type="text"  placeholder="Enter Email" class="form-control input-md">
+  </div>
+
+  
+
+   <label class="col-md-4 control-label" for="textinput">Verify</label>
+  <div class="col-md-4">
+  <input id="eVerify" name="username" type="text"  placeholder="Enter verify number" class="form-control input-md">
+  </div>
+
+ 
+
+</div>
+
+<div class="form-group">
+  <div class="col-md-4">
+    <button id="teacherEditSave" name="submit"  class="btn btn-info">SAVE</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+ </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
