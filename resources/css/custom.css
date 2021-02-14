@@ -1,0 +1,459 @@
+
+*{
+  box-sizing: border-box;
+}
+
+
+body{
+   /*background-color: lightblue; */
+}
+
+
+.indexContainer{
+  background-image: url('../image/indexCover.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  margin-top:-24px;
+}
+
+.indexContainer h3{
+  color:white;
+}
+
+
+
+#courseData{
+  color:white;
+  max-width: 600px;
+  margin: auto;
+}
+
+#signupForm,#loginForm{
+  padding:3%;
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 15px;
+box-shadow: 4px 3px 76px 2px rgba(0,0,0,0.75);
+}
+
+
+#signupForm h3,#loginForm h3{
+  color: black;
+}
+
+#signupForm input[type=text],#signupForm input[type=password],#signupForm input[type=email],#loginForm input[type=text],#indexSearchForm input[type=text],#signupForm input[type=date]{
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 10px;
+  padding:2%;
+  border: 2px solid #d4d9dd;
+  height:45px;
+  margin-top:10px;
+
+}
+
+.btn-primary{
+  margin-top:8px;
+  height: 45px;
+  width:100%;
+}
+
+
+.indexLabel{
+  padding:10px;
+  max-width: 600px;
+  margin: auto;
+
+}
+
+
+#indexSearchForm{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#indexSearchForm button{
+  max-width: 150px;
+}
+
+
+#courseData{
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.topCategories{
+  padding: 2.5%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  grid-auto-rows: 50px;
+  grid-gap: 15px;
+}
+
+.topCategoriesDiv h3{
+  text-align: center;
+}
+
+.topCategories a{
+  display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 10px 10px 10px 10px;
+border: 1.5px solid #a198a1;
+    border-left-color: rgb(161, 152, 161);
+    border-left-style: solid;
+    border-left-width: 1.5px;
+border-left: 5px solid purple;
+
+}
+
+
+.gender{
+  width:100%;
+  margin-top: 3px;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------- COURSES START-------------------*/
+
+.categoriesList{
+  background-color: #212529;
+  width: 100%;
+  padding:0px;
+  display: grid;
+  grid-gap:5px;
+}
+
+.categoriesList a{
+  background-color: #212529;
+  padding:0px 5px;
+  color:white;
+  margin-top:5px;
+}
+
+.categoriesList a:hover{
+  background-color: grey;
+  text-decoration: none;
+}
+
+.coursesContainer{
+  display: grid;
+  grid-gap:30px;
+  grid-template-columns: repeat(auto-fill,minmax(231px,1fr));
+  padding:0% 5% ;
+}
+
+
+.courseBlockContainer{
+  background-color:  #F2F3F4;
+  border:1px solid lightgrey;
+  border-radius: 15px;
+  padding:10px;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+  text-decoration: none;
+  transition: box-shadow 0.25s  0.25s;
+}
+
+.courseBlockContainer:hover{
+  box-shadow: 0px 10px 14px -1px rgba(0,0,0,0.75);
+
+}
+
+.courseBlockContainer img{
+  width: 100%;
+}
+
+
+.courseBlock{
+  text-decoration: none;
+  color:black;
+  display: grid;
+
+}
+.courseBlock:hover{
+  text-decoration: none;
+}
+
+.courseTitle{
+  font-weight: 500;
+  font-size: 20px;  
+}
+.courseCredit{
+  font-weight: 400;
+}
+.courseTeacher{
+  font-weight: 400;
+}
+.coursePrice{
+  font-weight: 600;
+  font-size: 20px;
+}
+
+
+
+
+.categories{
+  /* background: red; */
+}
+
+
+
+
+
+
+/*-----------------COURSES END----------------------------*/
+
+
+
+
+/* ----------------------COURSE DETAILS---------------------------- */
+
+.courseDetailContainer{
+  background: lightblue;
+}
+
+
+
+/*-----------------------------------ADMINDASHBOARD-START------------------*/
+
+.adminContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.graphContainer{
+  display: grid;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.graphContainer section{
+  border-bottom: 2px solid red;
+  /*height: 250px;*/
+}
+
+
+
+.summaryDataContainer{
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+.summaryDataContainer a{
+  padding:10px;
+  width:100%;
+  height: 250px;
+  border: 2px solid blue;
+  margin-left:10px;
+  text-decoration:none;
+}
+
+#adminteacherdashboard{
+  background-image: url('../image/adminTeacherCover.jpg');
+  background-size: cover;
+  background-origin: center;
+  background-repeat: no-repeat;
+
+  color:white;
+}
+
+#adminstudentdashboard{
+  background-image: url('../image/adminStudentCover.jpg');
+  background-size: cover;
+  background-origin: center;
+  background-repeat: no-repeat;
+    color:white;
+
+}
+
+#admincoursedashboard{
+  background-image: url('../image/adminCoursesCover.jpg');
+  background-size: cover;
+  background-origin: center;
+  background-repeat: no-repeat;
+  color:white;
+
+}
+
+
+
+
+/*-----------------------------------ADMINDASHBOARD-END------------------*/
+
+
+
+
+
+
+
+
+
+
+/*---------------------ALERTS STYLING---------------------------------*/
+
+.errorInput{
+  border:2px solid red !important;
+}
+
+
+
+
+
+
+
+
+
+
+@media(min-width:741px){
+
+  .indexContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    padding:1%;
+  }
+
+  .indexLabel{
+    flex-grow: 1;
+  }
+
+  .indexForms{
+    flex-grow: 0.75;
+  }
+
+
+  .categoriesList{
+    width: 100%;
+    height: 40px;
+    padding:0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+
+
+  .gender{
+  width:100%;
+  margin-top: 3px;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+}
+
+.gender label,.gender input{
+  margin-left: 20px;
+}
+
+.gender label{
+  margin-top:5px;
+}
+
+
+
+/*-----------------------------TEACHER COURSES START--------------------------*/
+#addcourseForm{
+  margin:auto;
+  border:2px solid red;
+  border-radius: 25px;
+  width: 45%;
+  padding:3%;
+}
+
+
+
+#addcourseForm textarea{
+  margin-top: 10px;
+  width: 100%;
+}
+#addcourseForm input{
+  margin-top: 10px;
+}
+
+#addcourseForm div{
+  margin-top: 10px;
+}
+
+
+
+/*-----------------------------TEACHER COURSES END--------------------------*/
+
+
+/*-----------------------------------ADMINDASHBOARD-START------------------*/
+
+.adminContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.graphContainer{
+  /*display: flex;*/
+  flex-direction: row;
+  justify-content: flex-start;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+
+.graphContainer section{
+  border-bottom: 2px solid red;
+  /*height: 250px;*/
+  border:1px solid red;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+
+.summaryDataContainer{
+  display: flex;
+  flex-direction: row;
+  padding:10px;
+  justify-content: space-around;
+
+
+}
+
+.summaryDataContainer a{
+  padding:10px;
+  width:25%;
+  height: 250px;
+  border: 2px solid blue;
+  margin-left:10px;
+  text-decoration:none;
+}
+
+
+
+
+/*-----------------------------------ADMINDASHBOARD-END------------------*/
+
+
+
+}

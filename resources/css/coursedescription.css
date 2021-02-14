@@ -1,0 +1,51 @@
+*{
+	box-sizing: border-box;
+}
+
+.container-fluid{
+	position: relative;
+}
+
+
+.courseDesc{
+  padding:2% 3.5%;
+  width: 69%;
+
+}
+
+
+.courseDetailDescription{
+	width:67%;
+	padding:1% 3%;
+	border:1px solid lightgrey;
+	margin-left: 3.4%;
+	text-align: justify;
+}
+
+.courseVideoContainer{
+	width: 70.4%;
+	/*margin-left: 3.4%;*/
+}
+
+
+.position-absolute{
+	width: 25%;
+	border:1px solid lightgrey;
+	background-color: white;
+	position: absolute;
+	top:20px;
+	right: 20px;
+	padding:10px;
+	z-index: 1;
+}
+
+
+.position-absolute img{
+	width:100%;
+}
+
+.coursePrice{
+	font-size: 175%;
+}
+
+
