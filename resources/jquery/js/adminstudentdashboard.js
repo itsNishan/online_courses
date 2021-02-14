@@ -66,20 +66,15 @@ $(document).ready(function() {
         });
     });
 });
-
-
-
 // edit student
 $(document).on('click', '.editStudent', function(e) {
     e.preventDefault();
     var id = $(this).attr('data-id');
-    // alert(id);  
     $.ajax({
         url: 'http://localhost:3000/get/student/' + id,
         method: 'get',
         contentType: 'application/json',
         success: function(result, status) {
-            // console.log(result.info);
             $('#eFirstName').val(result.info.first_name);
             $('#eLastName').val(result.info.last_name);
             $('#eAddress').val(result.info.address);
